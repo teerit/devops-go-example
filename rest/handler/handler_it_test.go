@@ -60,7 +60,7 @@ func TestITGetGreeting(t *testing.T) {
 	// Assertions
 	if assert.NoError(t, err) {
 		assert.Equal(t, http.StatusOK, resp.StatusCode)
-		assert.Equal(t, "Hello, World! DevOps", string(byteBody))
+		assert.Equal(t, "Hello, World!", string(byteBody))
 	}
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
