@@ -76,7 +76,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         with:
-          repository: aorjoa-training/devops-argocd
+          repository: teerit/devops-argocd
           persist-credentials: false
           fetch-depth: 0
       - name: change image tag
