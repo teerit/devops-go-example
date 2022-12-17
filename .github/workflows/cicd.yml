@@ -83,7 +83,7 @@ jobs:
         run: |
           git --version
           git config user.name "teerit"
-          git config user.email "root@teerit.link"
+          git config user.email "teeritploensin@gmail.com"
           sed -i -E "s/ghcr.io\/teerit\/devops-go-example.*$/ghcr.io\/teerit\/devops-go-example:${GITHUB_SHA}/" kube-gitops/deployment.yml
           git add kube-gitops/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
