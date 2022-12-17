@@ -39,7 +39,7 @@ jobs:
         run: echo "GITHUB_SHA=${GITHUB_SHA}" >> $GITHUB_ENV
       
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag ghcr.io/aorjoa-training/devops-go-example:${{ env.GITHUB_SHA }}
+        run: docker build . --file Dockerfile --tag ghcr.io/teerit/devops-go-example:${{ env.GITHUB_SHA }}
         
       - name: Integration test inside Docker-compose cleanup
         run: docker-compose -f docker-compose.test.yml down
@@ -60,7 +60,7 @@ jobs:
         with:
           context: .
           tags: |
-            ghcr.io/aorjoa-training/devops-go-example:${{ env.GITHUB_SHA }}
+            ghcr.io/teerit/devops-go-example:${{ env.GITHUB_SHA }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
 
@@ -82,9 +82,9 @@ jobs:
       - name: change image tag
         run: |
           git --version
-          git config user.name "aorjoa"
-          git config user.email "root@aorjoa.link"
-          sed -i -E "s/ghcr.io\/aorjoa-training\/devops-go-example.*$/ghcr.io\/aorjoa-training\/devops-go-example:${GITHUB_SHA}/" kube-gitops/deployment.yml
+          git config user.name "teerit"
+          git config user.email "teeritploensin@gmail.com"
+          sed -i -E "s/ghcr.io\/teerit\/devops-go-example.*$/ghcr.io\/teerit\/devops-go-example:${GITHUB_SHA}/" kube-gitops/deployment.yml
           git add kube-gitops/deployment.yml
           git commit -m "🤖 change docker image version to ${GITHUB_SHA}"
       - name: push changes
