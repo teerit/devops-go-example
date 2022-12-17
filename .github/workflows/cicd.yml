@@ -91,5 +91,5 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.PAT }}
-          repository: aorjoa-training/devops-argocd
+          repository: teerit/devops-argocd
           branch: main
