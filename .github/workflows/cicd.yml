@@ -67,7 +67,7 @@ jobs:
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
   # ==============
-  # CD task
+  # CD task (argocd)
   # ==============
   gitops-versioning:
     runs-on: ubuntu-latest
