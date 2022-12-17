@@ -90,6 +90,6 @@ jobs:
       - name: push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.PAT }}
+          github_token: ${{ secrets.MY_SCRET }}
           repository: teerit/devops-argocd
           branch: main
